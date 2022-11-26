@@ -1,70 +1,89 @@
 /* Example List Styling */
+*{
+  font-family: Arial, Helvetica, sans-serif; 
+  box-sizing: border-box;
+}
 
 .list-container{
   width: 100%;
   height: 100vh;
-  margin-top: 1rem;
 }
 
 .main-list {
-  border: 2px solid #4f4f4f;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   background: lightgray;
 }
 
+
+
 figure {
-  /* border: 2px solid red; */
-  width: fit-content;
-  display: flex;
+   position:relative;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
   text-align: center;
-  flex-direction: column-reverse;
-  position: relative;
+
+
+}
+
+h3 {
+  display:flex;
 }
 
 figure img {
-  width: 15rem;
-  height: 15rem;
+  width: 100%;
+  border:none;
+  margin:none;
+  padding:none;
 }
 
-figure p {
-  position: relative;
-  bottom: 2.9rem;
-  left: 11.4rem;
+div.image-price {
+  color: black;
   background: white;
-  border: 1px solid white;
-  height: 1.5rem;
-  width: 3.5rem;
+  position:absolute;
+  right: 0px;
+  top: 1.3rem;
+  text-align: end;
+  padding-right: 3px;
+  width: 6rem;
+  height: 3rem;
 }
 
-figure h3 {
-  width: 15rem;
-}
+
+
 
 /*Nav styles*/
 
 .nav-bar-container {
   border-bottom: 1px solid #4f4f4f;
-  height: 5vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5%;
+  height: 5rem;
 }
 
 .nav-bar {
   /* border: 1px solid #4f4f4f; */
-  width: 20%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  margin: none;
+  padding: none;
+
 }
 
 .nav-bar a {
   text-decoration: none;
   color: #4f4f4f;
-  font-size: 1.3rem;
+  font-size: 1rem;
+  margin: none;
+  padding: none;
+  height: 1.1rem;
 }
 
 .nav-bar a:hover {
@@ -72,64 +91,90 @@ figure h3 {
   cursor: pointer;
 }
 
-.nav-bar button {
-  height: 1.7rem;
-  width: 5rem;
-  border-radius: 0.2rem;
-  color: black;
-  background: rgba(235, 95, 95, 0.5);
-  border: none;
+#logout {
+  font-size: 1rem;
 }
 
-.nav-bar button:hover {
+.nav-bar #logout button{
+  padding: none;
+  margin: none;
+  display: flex;
+  background: none;
+  border: white;
+  text-decoration: none;
+  color: #4f4f4f;
+  font-size: 1rem;
+}
+
+.nav-bar #logout button:hover{
+  border-top: 1px solid black;
   cursor: pointer;
 }
 
+.logo{
+  height: 2rem;
+  padding: none;
+  margin: none;
+}
 
-.logo a{
+.logo a h1{
   text-decoration: none;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding: none;
+  margin: none;
+}
+
+#logo-cowrie {
+  max-width: 2rem;
+}
+.logo a{
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 /*Landing Page Styling*/
 
 .landing-page {
-  height: 90vh;
+  max-height: 900px;
+  height: 170vw;
   /* border: 1px solid #4f4f4f; */
   display: flex;
+  justify-content: center;
 }
 
-.landing-page img {
-  width: 50%;
-  margin: 2rem;
-  border-radius: 3rem;
+.landing-page div.image {
+  width: 100vw;
+  max-width: 730px;
+  background-image: url('/assets/AfricanMarketCover.jpg');
+  background-position: bottom center;
+  margin:none;
 }
 
 .shop-cta {
-  margin-left: 13rem;
-  margin-top: 20rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 0.2rem;
 }
 
-.shop-cta h1 {
+.shop-cta h2 {
   font-size: 4rem;
 }
 
 .shop-cta h3 {
-  font-size: 1.5rem;
-  color: #4f4f44;
+  font-size: 3rem;
+  color: #151504;
 }
 
 .shop-cta button {
   height: 3rem;
   width: 7rem;
-  margin-left: 5rem;
   border: none;
+  transition: 500ms;
 }
 
-.shop-cta button:hover {
-  cursor: pointer;
-}
+
 
 .shop-cta button:nth-child(1) {
   background: #ffba00;
@@ -143,12 +188,21 @@ figure h3 {
 }
 
 .shop-cta button:nth-child(2) {
-  background-color: rgb(24, 5, 5);
+  background-color: white;
+  border: 2px solid rgb(24, 5, 5);
   font-size: 1rem;
+  transition: 500ms;
 }
 
+.shop-cta button:hover {
+  cursor: pointer;
+  background-color: lightgoldenrodyellow;
+  font-size: 1.05rem;
+}
+
+
 .shop-cta button:nth-child(2) a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -158,15 +212,14 @@ figure h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  height:85vh;
   
 }
 
 .owner-log-in-card {
   border: 1px solid #4f4f4f;
-  height: 50vh;
-  width: 40vh;
-  margin: 5rem;
-  padding: 2rem;
+  height: 80vh;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -178,7 +231,6 @@ figure h3 {
 .owner-log-in-card label {
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
   text-align: center;
   line-height: 3rem;
 }
@@ -208,8 +260,8 @@ figure h3 {
 
 .new-owner-card{
   border: 1px solid #4f4f4f;
-  height: 50vh;
-  width: 40vh;
+  height: 30vw;
+  width: 30vw;
   margin: 5rem;
   margin-top: 1.6rem;
   padding: 2rem;
@@ -240,4 +292,79 @@ figure h3 {
 
 .new-owner-card #new-owner-submit:hover{
   cursor: pointer;
+}
+
+.add-item-container {
+  display: block;
+  z-index: 3;
+  background: rgb(255,255,255);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: space-between;
+  padding-bottom: 2vw;
+}
+
+.row label{
+  display: flex;
+  flex-direction: column;
+  padding-right: 2vw;
+}
+
+.add-button {
+  background: #ffba00;
+  font-size: 1.2rem;
+}
+
+.row .add-submit-button {
+  background-color: white;
+  border: 2px solid rgb(24, 5, 5);
+  font-size: 1rem;
+}
+
+.cast-shadow {
+  box-shadow: 100vw 100vw 100vw 100vw rgb(255,255,255, 0.7)
+}
+
+
+
+@media only screen and (min-width: 400px) {
+
+
+  .nav-bar-container {
+    height: 7rem;
+  }
+  
+  .nav-bar a {
+    font-size: 2rem;
+    height: 2.5rem;
+  }
+  
+  #logout {
+    font-size: 2rem;
+  }
+  
+  .nav-bar #logout button{
+    font-size: 2rem;
+  }
+  
+  .logo{
+    height: 3rem;
+  }
+  
+  .logo a h1 {
+    font-size: 2rem;
+  }
+  #logo-cowrie {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  figure {
+    max-width: 380px;
+  }
+
 }

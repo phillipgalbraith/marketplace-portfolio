@@ -50,10 +50,10 @@ function OwnerLogin () {
     <div className="log-in-container">
       {typeof localStorage.getItem('token') !== 'string' && (
         <div className="owner-log-in-card">
-          <h2>LOGIN</h2>
+          <h2>Shop owners, sign in!</h2>
           <form onSubmit={handleSubmit}>
             <label>
-              USERNAME
+              username
               <input
                 type="text"
                 value={state.username}
@@ -63,7 +63,7 @@ function OwnerLogin () {
             </label>
 
             <label>
-              PASSWORD
+              password
               <input
                 type="password"
                 value={state.password}
@@ -76,7 +76,7 @@ function OwnerLogin () {
             { hasFailed && <li>"login has failed</li>}
           </form>
           <p>Don't have an account?</p>
-          <Link to="/register">Register New Owner</Link>
+          <Link to="/register">Register Your Business</Link>
         </div>
       )}
       {typeof localStorage.getItem('token') === 'string' && (

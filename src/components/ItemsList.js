@@ -6,31 +6,8 @@ import { fetchItems } from '../state/actions/index';
 
 const ItemsList = props => {
   const { items, isLoading, itemError, fetchItems } = props;
-  // const initialState = [
-  //   {
-  //     category: '',
-  //     description: '',
-  //     item_id: 0,
-  //     location: '',
-  //     name: '',
-  //     price: 0,
-  //     user_id: 0,
-  //   },
-  // ];
 
-  // const [items, setItems] = useState(initialState);
-
-  // useEffect(() => {
-  //   axiosWithAuth
-  //     .get(`${API_URL}items`)
-  //     .then(res => {
-  //       setItems(res.data);
-  //       console.log(res.data);
-  //     })
-  //     .catch(err => console.error(err));
-  // }, []);
-
-  // This should fetch the items using redux and therefore reducing code
+  // This fetches the items using redux and therefore reducing code
   useEffect(() => {
     fetchItems();
   }, []);
@@ -39,7 +16,7 @@ const ItemsList = props => {
   if (isLoading) {
     return <h2>Loading...</h2>;
   }
-  // This just puts up an error message if something goes wrong
+  // This puts up an error message if something goes wrong
   if (itemError) {
     const error = itemError.toString();
     // No clue why it's making me toString but oh well
@@ -50,14 +27,15 @@ const ItemsList = props => {
     <div className="list-container">
       <div className="main-list">
         {items.map(item => (
-          <figure key={item.item_id}>
+          <figure key={item.item_id} className="fig-container">
+            <figcaption>
+               {item.name}
+            </figcaption>
+            <img src={item.url} alt={item.name} />
+            
             <div className="image-price">
-              <img src={item.url} alt={item.name} />
               <p>{item.price}</p>
             </div>
-            <figcaption>
-              <h3>{item.name}</h3>
-            </figcaption>
           </figure>
         ))}
       </div>

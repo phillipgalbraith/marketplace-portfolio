@@ -133,94 +133,109 @@ const OwnerAddItem = (props) => {
     newItemInfo.category = e.target.value;
     return newItemInfo;
   };
-
   return (
-    <div className="add-item-container">
-      {!isAddingItem && <button onClick={handleClickAdd}>Add New Item</button>}
+    <div className={isAddingItem? 'add-item-container' : 'add-item-container'}>
+      Welcome shop owner! <span> </span>
+      {
+        !isAddingItem && 
+          <button onClick={handleClickAdd} className="add-button">
+            Add New Item
+          </button>
+      }
       {isAddingItem && (
         <div className="add-item-card">
-          <h2>ADD AN ITEM</h2>
-          <button onClick={handleCancel}>X close</button>
+          <h2>add an item</h2>
+          <button onClick={handleCancel} className="add-button">
+            X cancel
+          </button>
           { !isValidItem && 
             <p>
               You must include a name, price, category and location. 
             </p>}
           <form onSubmit={handleSubmit}>
-            <label>
-              PRODUCT NAME
-              <input
-                type="text"
-                value={newItem.name}
-                onChange={handleChange}
-                name="name"
-                id="name"
-              />
-            </label>
+            <div className="row">
+              <label>
+                product name
+                <input
+                  type="text"
+                  value={newItem.name}
+                  onChange={handleChange}
+                  name="name"
+                  id="name"
+                />
+              </label>
+  
+              <label>
+                description
+                <input
+                  type="text"
+                  value={newItem.description}
+                  onChange={handleChange}
+                  name="description"
+                />
+              </label>
+            </div>
 
-            <label>
-              DESCRIPTION
-              <input
-                type="text"
-                value={newItem.description}
-                onChange={handleChange}
-                name="description"
-              />
-            </label>
+            <div className="row">
+              <label>
+                price
+                <input
+                  type="text"
+                  value={newItem.price}
+                  onChange={handleChange}
+                  name="price"
+                />
+              </label>
+            
+              <label>
+                location
+                <input
+                  type="text"
+                  value={newItem.location}
+                  onChange={handleChange}
+                  name="location"
+                />
+              </label>              
+            </div>
+            <div className="row">
 
-            <label>
-              PRICE
-              <input
-                type="text"
-                value={newItem.price}
-                onChange={handleChange}
-                name="price"
-              />
-            </label>
+              <label>
+                image url
+                <input
+                  type="text"
+                  value={newItem.url}
+                  onChange={handleChange}
+                  name="url"
+                />
+              </label>
+              <label>
+                category
+                <select
+                  id={newItem.category}
+                  onChange={selectCategory}
+                  name={newItem.category}
+                  value={newItem.category}
+                >
+                  <option name="category" value="0">
+                    select a category:
+                  </option>
+                  <option name="housewares" value="housewares">
+                    housewares
+                  </option>
+                  <option name="furniture" value="furniture">
+                    furniture
+                  </option>
+                  <option name="food" value="food">
+                    food
+                  </option>
+                  <option name="apparel" value="apparel">
+                    apparel
+                  </option>
+                </select>
+              </label>
+              <input type="submit" value="Submit" className="add-submit-button"/>
+            </div>
 
-            <label>
-              LOCATION
-              <input
-                type="text"
-                value={newItem.location}
-                onChange={handleChange}
-                name="location"
-              />
-            </label>
-            <label>
-              IMAGE URL
-              <input
-                type="text"
-                value={newItem.url}
-                onChange={handleChange}
-                name="url"
-              />
-            </label>
-            <label>
-              CATEGORY
-              <select
-                id={newItem.category}
-                onChange={selectCategory}
-                name={newItem.category}
-                value={newItem.category}
-              >
-                <option name="category" value="0">
-                  SELECT CATEGORY:
-                </option>
-                <option name="housewares" value="housewares">
-                  HOUSEWARES
-                </option>
-                <option name="furniture" value="furniture">
-                  FURNITURE
-                </option>
-                <option name="food" value="food">
-                  FOOD
-                </option>
-                <option name="apparel" value="apparel">
-                  APPAREL
-                </option>
-              </select>
-            </label>
-            <input type="submit" value="SUBMIT" />
           </form>
         </div>
       )}

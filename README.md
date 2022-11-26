@@ -1,3 +1,10 @@
+This project demonstrates many of this skills I developed at Bloom Tech.  It will be paired with the Feast Planner app, as that was an early success with coding a Dashboard that I feel shows my hard work and creativity.  
+My third Portfolio site will be a Typescript/bootstrap/SQL app for creating UX tests.  My portfolio itself will be a Nextjs app.
+
+code available at phillipgalbraith/marketplace-portfolio.git
+
+
+
 # Basic SPA
 
 For steps on how to work with this repository [please see here](https://docs.labs.lambdaschool.com/labs-spa-starter/)

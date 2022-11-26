@@ -18,6 +18,8 @@ export const initialState = {
   ],
   isLoading: false,
   fetchingError: '',
+  user_id: '',
+  user_name: '',
 };
 
 const itemReducer = (state = initialState, action) => {

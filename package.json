@@ -5,9 +5,7 @@
   "license": "MIT",
   "repository": "github:Lambda-School-Labs/african-marketplace-2",
   "dependencies": {
-    "@craco/craco": "^5.6.4",
     "axios": "^0.19.2",
-    "craco-less": "^1.17.0",
     "dotenv": "^16.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -19,9 +17,9 @@
     "redux-thunk": "^2.4.2"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
-    "test": "craco test --env=jest-environment-jsdom-sixteen",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prettier": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "coverage": "npm test -- --coverage --watchAll=false",

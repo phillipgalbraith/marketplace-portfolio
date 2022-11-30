@@ -3,7 +3,9 @@ My third Portfolio site will be a Typescript/bootstrap/SQL app for creating UX t
 
 code available at phillipgalbraith/marketplace-portfolio.git
 
+# Firebase deployment
 
+the package.json must have "CI=false
 
 # Basic SPA
 
